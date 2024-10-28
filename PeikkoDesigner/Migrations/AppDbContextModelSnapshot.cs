@@ -43,7 +43,7 @@ namespace PeikkoDesigner.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
+                    b.ToTable("roles", (string)null);
                 });
 
             modelBuilder.Entity("PeikkoDesigner.User", b =>
@@ -68,7 +68,8 @@ namespace PeikkoDesigner.Migrations
                     b.Property<string>("State")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("state");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2")
@@ -82,7 +83,7 @@ namespace PeikkoDesigner.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("user_roles", b =>

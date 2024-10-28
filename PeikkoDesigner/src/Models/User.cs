@@ -30,6 +30,7 @@ public partial class User
 	public DateTime  UpdatedAt { get; set; }
 
 	[Required, MaxLength(50)]
+	[Column("state")]
 	[DefaultValue("active")]
 	public string State { get; set; } = null!;
 

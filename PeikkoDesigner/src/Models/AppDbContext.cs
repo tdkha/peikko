@@ -11,6 +11,10 @@ namespace PeikkoDesigner.Models
 
 		 protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
+            modelBuilder.Entity<User>().ToTable("users");
+
+            modelBuilder.Entity<Role>().ToTable("roles");
+
 			modelBuilder.Entity<User>()
 				.HasMany(u => u.Roles)
 				.WithMany(r => r.Users)
