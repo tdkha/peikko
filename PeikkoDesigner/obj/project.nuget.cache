@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N1Hao0CXk1o=",
+  "dgSpecHash": "ptBjqO0WtpY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tieud\\Desktop\\projects\\PeikkoDesigner\\PeikkoDesigner\\PeikkoDesigner.csproj",
+  "projectFilePath": "C:\\Users\\tieud\\Desktop\\projects\\peikko\\PeikkoDesigner\\PeikkoDesigner.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tieud\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\tieud\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

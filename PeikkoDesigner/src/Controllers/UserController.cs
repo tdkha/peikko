@@ -3,10 +3,10 @@ using PeikkoDesigner.Interfaces;
 
 namespace PeikkoDesigner.Controllers
 {
-    [ApiController]
-    [Route("api/users")]
-    public class UserController : ControllerBase
-    {
+	[Route("api/users")]
+	[ApiController]
+	public class UserController : ControllerBase
+	{
 		private readonly IUserService _userService;
 
 		public UserController(IUserService userService)
@@ -31,5 +31,5 @@ namespace PeikkoDesigner.Controllers
 			}
 			return Ok(user);
 		}
-    }
+	}
 }

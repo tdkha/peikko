@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // SERVICES CONFIGURATION
 // ----------------------------------------------------
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IComputeService, ComputeService>();
 
 // ----------------------------------------------------
 // DATBASE CONFIGURATION

@@ -1,6 +1,42 @@
 @PeikkoDesigner_HostAddress = http://localhost:5260
 
 
+### Send GET request retrieve all users
 GET {{PeikkoDesigner_HostAddress}}/api/users/
 Accept: application/json
 
+### Send POST request to validate layers
+POST http://localhost:5260/api/compute/validate
+Content-Type: application/json
+
+{
+    "ExternalLayer": {
+        "X": 0,
+        "Y": 0,
+        "Width": 100,
+        "Height": 200,
+        "Thickness": 10,
+        "Name": "ExternalLayer"
+    },
+    "InternalLayer": {
+        "X": 10,
+        "Y": 10,
+        "Width": 90,
+        "Height": 180,
+        "Thickness": 8,
+        "Name": "InternalLayer"
+    },
+    "InsulatedLayer": {
+        "X": 5,
+        "Y": 5,
+        "Width": 95,
+        "Height": 190,
+        "Thickness": 6,
+        "Name": "InsulatedLayer"
+    },
+    "Hole": {
+        "X": 15,
+        "Y": 15,
+        "Width": 
+	}
+}
