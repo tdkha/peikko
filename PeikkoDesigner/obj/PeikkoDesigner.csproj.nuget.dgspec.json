@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tieud\\Desktop\\projects\\peikko\\PeikkoDesigner\\PeikkoDesigner.csproj": {}
+    "C:\\Users\\tieud\\Desktop\\projects\\Peikko\\PeikkoDesigner\\PeikkoDesigner.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tieud\\Desktop\\projects\\peikko\\PeikkoDesigner\\PeikkoDesigner.csproj": {
+    "C:\\Users\\tieud\\Desktop\\projects\\Peikko\\PeikkoDesigner\\PeikkoDesigner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tieud\\Desktop\\projects\\peikko\\PeikkoDesigner\\PeikkoDesigner.csproj",
+        "projectUniqueName": "C:\\Users\\tieud\\Desktop\\projects\\Peikko\\PeikkoDesigner\\PeikkoDesigner.csproj",
         "projectName": "PeikkoDesigner",
-        "projectPath": "C:\\Users\\tieud\\Desktop\\projects\\peikko\\PeikkoDesigner\\PeikkoDesigner.csproj",
+        "projectPath": "C:\\Users\\tieud\\Desktop\\projects\\Peikko\\PeikkoDesigner\\PeikkoDesigner.csproj",
         "packagesPath": "C:\\Users\\tieud\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tieud\\Desktop\\projects\\peikko\\PeikkoDesigner\\obj\\",
+        "outputPath": "C:\\Users\\tieud\\Desktop\\projects\\Peikko\\PeikkoDesigner\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tieud\\AppData\\Roaming\\NuGet\\NuGet.Config",

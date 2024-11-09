@@ -49,29 +49,36 @@ public enum HolePosition
 
 public class Hole : Layer
 {
+	//---------------------------------------------
+	// Properties
+	//---------------------------------------------
 	public HolePosition Position { get; set; }
 
+	//---------------------------------------------
+	// Constructor 
+	//---------------------------------------------
 	public Hole(string name, int x, int y, int width, int height, HolePosition position)
 		: base(name, x, y, width, height, 0)
 	{
 		Position = position;
 	}
 
-	public  int SetThickness(
+	//---------------------------------------------
+	// Methods 
+	//---------------------------------------------
+	public int SetThickness(
 		Layer externalLayer,
 		Layer internalLayer,
-		Layer insulatedLayer)
+		Layer? insulatedLayer)
 	{
-		if (internalLayer == null || externalLayer == null)
-			return (0);
 		switch (Position)
 		{
 			case HolePosition.Internal:
 				Thickness = internalLayer.Thickness;
-				return (Thickness);
+				return Thickness;
 			case HolePosition.External:
 				Thickness = externalLayer.Thickness;
-				return (Thickness);
+				return Thickness;
 			case HolePosition.Both:
 				int thickness = 0;
 				if (internalLayer != null)
@@ -81,11 +88,12 @@ public class Hole : Layer
 				if (externalLayer != null)
 					thickness += externalLayer.Thickness;
 				Thickness = thickness;
-				return (Thickness);
+				return Thickness;
 			default:
-				return (0);
+				return 0;
 		}
 	}
+
 	public override void Print()
 	{
 		base.Print();

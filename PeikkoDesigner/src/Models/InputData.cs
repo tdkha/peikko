@@ -1,4 +1,3 @@
-
 public class InputData
 {
 	//---------------------------------------------
@@ -17,26 +16,15 @@ public class InputData
 	{
 		ExternalLayer = externalLayer;
 		InternalLayer = internalLayer;
-		InsulatedLayer = new Layer(
-			"InsulatedLayer",
-			internalLayer.X,
-			internalLayer.Y,
-			internalLayer.Width,
-			internalLayer.Height,
-			insulatedLayerThickness);
+		InsulatedLayerThickness = insulatedLayerThickness;  // Assign thickness to the property
+		InitInsulatedLayer(InternalLayer, ExternalLayer, InsulatedLayerThickness);
 		Hole = hole;
 		hole.SetThickness(ExternalLayer, InternalLayer, InsulatedLayer);
 	}
+
 	//---------------------------------------------
 	// Methods 
 	//---------------------------------------------
-	public bool	Check()
-	{
-		if (ValidateCenterGravity(ExternalLayer, InternalLayer))
-			return (true);
-		return (false);
-	}
-
 	public void PrintLayers()
 	{
 		ExternalLayer.Print();
@@ -45,15 +33,15 @@ public class InputData
 		Hole.Print();
 	}
 
-	//---------------------------------------------
-	// Helper functions 
-	//---------------------------------------------s
-	private static bool ValidateCenterGravity(Layer eLayer, Layer iLayer)
+	private void InitInsulatedLayer(Layer iLayer, Layer eLayer, int thickness)
 	{
-		int externalCenterX = eLayer.X + (eLayer.Width / 2);
-		int externalCenterY = eLayer.Y + (eLayer.Height / 2);
-		return (iLayer.X <= externalCenterX && externalCenterX <= iLayer.X + iLayer.Width)
-			&& (iLayer.Y <= externalCenterY && externalCenterY <= iLayer.Y + iLayer.Height);
+		InsulatedLayer = new Layer(
+			"InsulatedLayer",
+			Math.Max(iLayer.X, eLayer.X),
+			Math.Max(iLayer.Y, eLayer.Y),
+			Math.Min(iLayer.X + iLayer.Width, eLayer.X + eLayer.Width) - Math.Max(iLayer.X, eLayer.X),
+			Math.Min(iLayer.Y + iLayer.Height, eLayer.Y + eLayer.Height) - Math.Max(iLayer.Y, eLayer.Y),
+			thickness  // Use the parameter for thickness
+		);
 	}
-
 }

@@ -19,12 +19,11 @@ namespace PeikkoDesigner.Controllers
 		{
 			if (data == null)
 				return BadRequest("Input data is required.");
-			data.PrintLayers();
-			int validationResult = await _computeService.InputCheck(data);
-			if (validationResult == 0)
+			string validationResult = _computeService.InputCheck(data);
+			if (validationResult == null)
 				return Ok("Validation passed.");
 			else
-				return BadRequest("Validation failed.");
+				return BadRequest(validationResult);
 		}
 	}
 }

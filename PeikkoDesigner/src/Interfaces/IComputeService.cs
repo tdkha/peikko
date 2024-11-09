@@ -6,6 +6,6 @@ namespace PeikkoDesigner.Interfaces
 {
 	public interface IComputeService
 	{
-		Task<int> InputCheck(InputData data);
+		string InputCheck(InputData data);
 	}
 }
