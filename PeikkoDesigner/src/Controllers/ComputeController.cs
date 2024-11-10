@@ -19,11 +19,26 @@ namespace PeikkoDesigner.Controllers
 		{
 			if (data == null)
 				return BadRequest("Input data is required.");
-			string validationResult = _computeService.InputCheck(data);
+			string validationResult = _computeService.CheckGeometry(data);
 			if (validationResult == null)
 				return Ok("Validation passed.");
 			else
 				return BadRequest(validationResult);
+		}
+
+		[HttpPost("loads")]
+		public async Task<IActionResult> GetLoads([FromBody] InputData data)
+		{
+			if (data == null)
+				return BadRequest("Input data is required.");
+			string validationResult = _computeService.CheckGeometry(data);
+			data.PrintLayers();
+			if (validationResult != null)
+				return (BadRequest(validationResult));
+			List<ComputeDto.LayerLoadsDto> res = _computeService.ComputeLoads(data);
+			if (res == null || res.Count == 0)
+				return StatusCode(500, "Failed to compute loads.");
+			return (Ok(res));				
 		}
 	}
 }

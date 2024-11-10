@@ -6,16 +6,16 @@ public class Layer
 	// Properties
 	//---------------------------------------------
 	public string Name { get; set; }
-	public int X { get; set; }
-	public int Y { get; set; }
-	public int Width { get; set; }
-	public int Height { get; set; }
-	public int Thickness { get; set; }
+	public double X { get; set; }
+	public double Y { get; set; }
+	public double Width { get; set; }
+	public double Height { get; set; }
+	public double Thickness { get; set; }
 
 	//---------------------------------------------
 	// Constructor 
 	//---------------------------------------------
-	public Layer(string name, int x, int y, int width, int height, int thickness)
+	public Layer(string name, double x, double y, double width, double height, double thickness)
 	{
 		Name = name;
 		X = x;
@@ -57,7 +57,7 @@ public class Hole : Layer
 	//---------------------------------------------
 	// Constructor 
 	//---------------------------------------------
-	public Hole(string name, int x, int y, int width, int height, HolePosition position)
+	public Hole(string name, double x, double y, double width, double height, HolePosition position)
 		: base(name, x, y, width, height, 0)
 	{
 		Position = position;
@@ -66,7 +66,7 @@ public class Hole : Layer
 	//---------------------------------------------
 	// Methods 
 	//---------------------------------------------
-	public int SetThickness(
+	public double SetThickness(
 		Layer externalLayer,
 		Layer internalLayer,
 		Layer? insulatedLayer)
@@ -80,7 +80,7 @@ public class Hole : Layer
 				Thickness = externalLayer.Thickness;
 				return Thickness;
 			case HolePosition.Both:
-				int thickness = 0;
+				double thickness = 0;
 				if (internalLayer != null)
 					thickness += internalLayer.Thickness;
 				if (insulatedLayer != null)
