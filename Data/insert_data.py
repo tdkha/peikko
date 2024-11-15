@@ -1,10 +1,10 @@
 import csv
 
 # Path to the CSV file
-csv_file_path = 'peikko_data.csv'
+csv_file_path = 'Data/peikko_data.csv'
 
 # Path to the output SQL file
-sql_file_path = 'insert_peikko_data.sql'
+sql_file_path = 'Data/insert_peikko_data.sql'
 
 # Write the SQL file
 with open(csv_file_path, mode='r', encoding='utf-8') as csvfile, open(sql_file_path, mode='w', encoding='utf-8') as sqlfile:
